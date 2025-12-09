@@ -1,0 +1,51 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev"
+  },
+  "dependencies": {
+    "@auth/prisma-adapter": "^2.11.1",
+    "@headlessui/react": "^2.2.9",
+    "@prisma/client": "^6.19.0",
+    "bcryptjs": "^3.0.3",
+    "crypto": "^1.0.1",
+    "decode-jwt": "^1.0.2",
+    "dotenv": "^17.2.3",
+    "fs": "^0.0.1-security",
+    "generate": "^0.14.0",
+    "init": "^0.1.2",
+    "jose": "^6.1.2",
+    "lucide-react": "^0.555.0",
+    "next": "16.0.3",
+    "next-auth": "^4.24.13",
+    "node": "^25.2.1",
+    "nodemailer": "^7.0.11",
+    "openssl": "^2.0.0",
+    "pg": "^8.16.3",
+    "postcss": "^8.5.6",
+    "postgres": "^3.4.7",
+    "rand": "^0.0.4",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "resend": "^6.5.2",
+    "zustand": "^5.0.9"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.3",
+    "prisma": "^6.19.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

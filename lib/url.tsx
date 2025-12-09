@@ -1,0 +1,1 @@
+export const onboardingRidirect = [ '/onboarding/products', '/onboarding/customer', '/onboarding/checkout' ];
