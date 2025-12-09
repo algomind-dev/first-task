@@ -7,6 +7,7 @@ import { BlueButton } from "@/components/elements/button/blueButton"
 const initialAvatarUrl = '/default-avatar.png'; 
 
 export const Account = () => {
+    const [state, setState] = useState(0);
     const [editState, setEditState] = useState(0);
     const [profilePreview, setProfilePreview] = useState({
         avatar:initialAvatarUrl,
