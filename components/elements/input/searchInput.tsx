@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+
 type InputProps = {
     label?: string;
     name?: string;
@@ -11,7 +12,7 @@ type InputProps = {
     className?: string;
   };
 
-export const InputWithIcon = (
+export const SearchInput = (
       {
           className = "",
           label,

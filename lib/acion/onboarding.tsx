@@ -19,21 +19,5 @@ export async function customerFormValidate( state: CustomerFormState, formData: 
          errors: validatedFields.error.flatten().fieldErrors,
        }
      }
-     
-     // const { fullname, email } = validatedFields.data;
-     // const res = await fetch('/api/auth/signup', {
-     //   method: 'POST',
-     //   headers: { "Content-Type": "application/json" },
-     //   body: JSON.stringify({ fullName: fullname, email: email, })
-     // });
-     // const result = await res.json();
-     // if(!res.ok){
-     //   return {
-     //     message: result.error,
-     //   }
-     // }
-     // else {
-     // }
-    //  onboarding/customer
      redirect(`/onboarding/checkout`);
    }

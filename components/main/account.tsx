@@ -6,14 +6,16 @@ import { InputWithIcon } from "@/components/elements/input/inputWithIcon"
 import { BlueButton } from "@/components/elements/button/blueButton"
 const initialAvatarUrl = '/default-avatar.png'; 
 
-export const Account = () => {
+export default function Account( { user }: { user: any } ){
+    console.log(user);
+    
+    const [state, setState] = useState(0);
     const [editState, setEditState] = useState(0);
     const [profilePreview, setProfilePreview] = useState({
-        avatar:initialAvatarUrl,
-        name:'',
-        email:'',
+        avatar:user.image || initialAvatarUrl,
+        name: user.name || '',
+        email: user.email || '',
         agency:'',
-
     });
     const onEditButton = () => {
         setEditState(editState ? 0 : 1);
@@ -30,7 +32,7 @@ export const Account = () => {
     const handleSubmit = async (formData: FormData) => {
         const res = await fetch('/api/upload', { method: 'POST', body: formData });
     }
-    const onChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         setProfilePreview(state => ({
             ...state,
             [e.target.name]:e.target.value
@@ -66,7 +68,7 @@ export const Account = () => {
                             </div>
                             <p className="text-sm">tiehe.dev1115@gmail.com</p>
                         </div>
-                        <BlueButton className="p-2" action={onEditButton}>
+                        <BlueButton className="p-2" action={onEditButton} >
                             <Pencil size={16}/>
                             Edit
                         </BlueButton>
@@ -83,7 +85,8 @@ export const Account = () => {
                                 name="name"
                                 Icon={User}
                                 disabled={editState ? false : true}
-                                onChange={onChange}
+                                value={profilePreview.name}
+                                onChange={handleChange}
                             />
                         </div>
                         <div className="w-1/2">
@@ -91,8 +94,9 @@ export const Account = () => {
                                 label="Agency"
                                 name="agency"
                                 Icon={BookText}
+                                value={profilePreview.agency}
                                 disabled={editState ? false : true}
-                                onChange={onChange}
+                                onChange={handleChange}
                             />
                         </div>
                     </div>
@@ -102,7 +106,8 @@ export const Account = () => {
                                 label="Email:"
                                 name="email"
                                 Icon={Mail}
-                                onChange={onChange}
+                                value={profilePreview.email}
+                                onChange={handleChange}
                                 disabled={editState ? false : true}
                             />
                         </div>
@@ -111,7 +116,7 @@ export const Account = () => {
                                 label="Preferred language:"
                                 name="nameq"
                                 Icon={Settings}
-                                onChange={onChange}
+                                onChange={handleChange}
                                 disabled={editState ? false : true}
                             />
                         </div>
