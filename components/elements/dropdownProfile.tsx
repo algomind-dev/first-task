@@ -1,3 +1,5 @@
+"use client";
+
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { Settings, HandCoins, CircleDollarSign, LogOut } from "lucide-react";
 import { deleteSession } from '@/lib/session';
