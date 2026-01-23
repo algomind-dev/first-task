@@ -1,10 +1,6 @@
-"use client"
+"use client";
 import { GeneralLayout } from "@/components/layout/GeneralLayout";
 
 export default function Page() {
-
-  return  ( 
-      <>
-      </>
-    )
+  return <div>asfdasdfsadf</div>;
 }
